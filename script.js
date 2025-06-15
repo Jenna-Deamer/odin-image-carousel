@@ -4,7 +4,8 @@ let slideIndex = 0;
 let interval = null;
 
 const initializeSliderInterval = () => {
-  interval = setInterval(nextSlide, 5000);
+  // Move slideDeck forward every 5 seconds
+  setInterval(nextSlide, 5000);
 };
 
 const displaySlide = (index) => {
@@ -30,8 +31,6 @@ const nextSlide = () => {
 };
 
 const prevSlide = () => {
-  // reset timer to prevent it from going right back
-  interval = setInterval(nextSlide, 5000);
   // Go backwards in slideshow
   slideIndex--;
   displaySlide(slideIndex);
