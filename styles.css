@@ -8,6 +8,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     background-color: rgb(200, 198, 200);
 }
@@ -57,4 +58,32 @@ body {
 .left-arrow-btn {
     top: 50%;
     right: 95%;
+}
+
+#slideshow-position-indicator {
+    margin-top: 1em;
+    display: flex;
+    gap: .5em;
+
+}
+
+.slide-indicator {
+     transition: .2s ease-in-out;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 100%;
+    background-color: rgb(120, 118, 118);
+    color: rgb(28, 28, 28);
+    text-decoration: none;
+}
+
+.slide-indicator:hover{
+    background-color: rgb(66, 62, 62);
+}
+.selected{
+     background-color: rgb(66, 62, 62);
 }
