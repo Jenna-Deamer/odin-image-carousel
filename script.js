@@ -21,9 +21,10 @@ const displaySlide = (index) => {
   slides.forEach((slide) => {
     slide.classList.remove("display-slide");
   });
-  slideIndictorButtons.forEach((indicator) =>{
+  slideIndictorButtons.forEach((indicator) => {
     indicator.classList.remove("selected");
   });
+
   // Display next slide
   slides[slideIndex].classList.add("display-slide");
   slideIndictorButtons[slideIndex].classList.add("selected");
@@ -48,4 +49,14 @@ const prevSlideBtn = document
   .querySelector(".prev")
   .addEventListener("click", prevSlide);
 
+// Get index of indicator clicked & switch slide to that index
+slideIndictorButtons.forEach((indictor) => {
+   indictor.addEventListener('click', function(e) {
+    const clickedIndictor = e.target;
+    const indicatorIndex = clickedIndictor.getAttribute('data-index');
+    console.log(indicatorIndex);
+    slideIndex = indicatorIndex;
+    displaySlide(slideIndex);
+   })
+});
 initializeSliderInterval();

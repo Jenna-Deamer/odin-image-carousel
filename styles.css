@@ -76,7 +76,6 @@ img.display-slide {
 
 .slide-indicator {
     transition: .2s ease-in-out;
-    display: inline-block;
     width: 20px;
     height: 20px;
     display: flex;
@@ -85,7 +84,8 @@ img.display-slide {
     border-radius: 100%;
     background-color: rgb(120, 118, 118);
     color: rgb(28, 28, 28);
-    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
 .slide-indicator:hover {
