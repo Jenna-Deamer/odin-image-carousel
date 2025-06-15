@@ -1,7 +1,7 @@
 const slides = document.querySelectorAll(".slide img");
+const slideIndictorButtons = document.querySelectorAll(".slide-indicator");
 
 let slideIndex = 0;
-let interval = null;
 
 const initializeSliderInterval = () => {
   // Move slideDeck forward every 5 seconds
@@ -21,8 +21,12 @@ const displaySlide = (index) => {
   slides.forEach((slide) => {
     slide.classList.remove("display-slide");
   });
+  slideIndictorButtons.forEach((indicator) =>{
+    indicator.classList.remove("selected");
+  });
   // Display next slide
   slides[slideIndex].classList.add("display-slide");
+  slideIndictorButtons[slideIndex].classList.add("selected");
 };
 
 const nextSlide = () => {
