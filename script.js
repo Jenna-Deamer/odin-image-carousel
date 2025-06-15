@@ -4,13 +4,17 @@ let slideIndex = 0;
 let interval = null;
 
 const initializeSliderInterval = () => {
-  interval = setInterval(nextSlide, 2000);
+  interval = setInterval(nextSlide, 5000);
 };
 
 const displaySlide = (index) => {
   // Handle slideIndex going past # of imgs
-  if (index >= slides.length){
+  if (index >= slides.length) {
     slideIndex = 0;
+  }
+  // Set slide to last in list when index is less than 0 (Hitting prev button)
+  else if (index < 0) {
+    slideIndex = slides.length - 1;
   }
   // Ensure all slides are hidden
   slides.forEach((slide) => {
@@ -25,7 +29,13 @@ const nextSlide = () => {
   displaySlide(slideIndex);
 };
 
-const prevSlide = () => {};
+const prevSlide = () => {
+  // reset timer to prevent it from going right back
+  interval = setInterval(nextSlide, 5000);
+  // Go backwards in slideshow
+  slideIndex--;
+  displaySlide(slideIndex);
+};
 
 // Attach event listeners
 const nextSlideBtn = document
