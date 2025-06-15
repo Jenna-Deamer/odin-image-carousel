@@ -8,6 +8,10 @@ const initializeSliderInterval = () => {
 };
 
 const displaySlide = (index) => {
+  // Handle slideIndex going past # of imgs
+  if (index >= slides.length){
+    slideIndex = 0;
+  }
   // Ensure all slides are hidden
   slides.forEach((slide) => {
     slide.classList.remove("display-slide");
@@ -30,6 +34,5 @@ const nextSlideBtn = document
 const prevSlideBtn = document
   .querySelector(".prev")
   .addEventListener("click", prevSlide);
-
 
 initializeSliderInterval();
