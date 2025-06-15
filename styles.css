@@ -15,18 +15,25 @@ body {
 
 #slideshow-container {
     width: 1000px;
-    outline: 2px black dashed;
     position: relative;
 }
 
-.visible {
-    display: none;
+#slideshow-container ul li {
+    list-style: none;
 }
 
 .slide img {
+    display: none;
     width: 100%;
     height: 500px;
+    object-fit: cover;
+    object-position: center;
 }
+
+img.display-slide {
+    display: block;
+}
+
 
 #slideshow-container button {
     position: absolute;
@@ -50,12 +57,12 @@ body {
     background-color: rgb(14, 14, 14);
 }
 
-.right-arrow-btn {
+.next {
     top: 50%;
     left: 95%;
 }
 
-.left-arrow-btn {
+.prev {
     top: 50%;
     right: 95%;
 }
@@ -68,7 +75,7 @@ body {
 }
 
 .slide-indicator {
-     transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -81,9 +88,10 @@ body {
     text-decoration: none;
 }
 
-.slide-indicator:hover{
+.slide-indicator:hover {
     background-color: rgb(66, 62, 62);
 }
-.selected{
-     background-color: rgb(66, 62, 62);
+
+.selected {
+    background-color: rgb(66, 62, 62);
 }
